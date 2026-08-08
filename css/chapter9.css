@@ -1,0 +1,377 @@
+/*==================================================
+                    CAPÍTULO 9
+==================================================*/
+
+#chapter9{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    overflow:hidden;
+
+}
+
+
+/*==================================================
+                    INTRO
+==================================================*/
+
+.letter-intro{
+
+    text-align:center;
+
+    animation:fadeIn 1s ease;
+
+}
+
+.letter-intro h2{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+.letter-intro p{
+
+    font-size:1.2rem;
+
+    opacity:.8;
+
+    margin-bottom:45px;
+
+}
+
+
+/*==================================================
+                ESCENA DEL SOBRE
+==================================================*/
+
+.letter-scene{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.envelope-tip{
+
+    margin-top:45px;
+
+    opacity:.8;
+
+    transition:.5s;
+
+}
+
+
+/*==================================================
+                    SOBRE
+==================================================*/
+
+.envelope{
+
+    position:relative;
+
+    width:320px;
+
+    height:210px;
+
+    cursor:pointer;
+
+}
+
+.paper{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:18px;
+
+    transform:translateX(-50%);
+
+    width:220px;
+
+    height:160px;
+
+    background:#fffdf8;
+
+    border-radius:10px 10px 4px 4px;
+
+    transition:2.3s ease;
+
+    z-index:1;
+
+}
+
+.front{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#efd9a2;
+
+    clip-path:polygon(0 0,100% 0,100% 100%,50% 58%,0 100%);
+
+    z-index:3;
+
+}
+
+.flap{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#f5e2b6;
+
+    clip-path:polygon(0 0,50% 58%,100% 0);
+
+    transform-origin:top;
+
+    transition:1s;
+
+    z-index:4;
+
+}
+
+.seal{
+
+    position:absolute;
+
+    left:50%;
+
+    top:52%;
+
+    transform:translate(-50%,-50%);
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    background:#ff5d8f;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.5rem;
+
+    z-index:5;
+
+}
+
+
+/*==================================================
+                ANIMACIÓN SOBRE
+==================================================*/
+
+.envelope.open .flap{
+
+    transform:rotateX(180deg);
+
+}
+
+.envelope.open .paper{
+
+    transform:translate(-50%,-250px);
+
+}
+
+
+/*==================================================
+                VISOR
+==================================================*/
+
+.letter-viewer{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:1s;
+
+    z-index:100;
+
+}
+
+.letter-viewer.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+/*==================================================
+                CARTA A4
+==================================================*/
+
+.letter{
+
+    width:min(760px,92vw);
+
+    height:min(88vh,980px);
+
+    background:#fffdf8;
+
+    color:#3d342d;
+
+    border-radius:10px;
+
+    padding:70px;
+
+    overflow-y:auto;
+
+    box-shadow:0 30px 80px rgba(0,0,0,.45);
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:1.45rem;
+
+    line-height:2.1;
+
+}
+
+
+/*==================================================
+            TEXTO
+==================================================*/
+
+#letterContent{
+
+    white-space:pre-wrap;
+
+}
+
+.cursor{
+
+    display:inline-block;
+
+    width:2px;
+
+    height:1.3em;
+
+    background:#333;
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+
+/*==================================================
+            FIRMA
+==================================================*/
+
+.signature{
+
+    margin-top:60px;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:.8s;
+
+    font-size:2rem;
+
+    font-family:"Dancing Script",cursive;
+
+}
+
+.signature.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/*==================================================
+            P.D.
+==================================================*/
+
+.postdata{
+
+    margin-top:45px;
+
+    padding-top:30px;
+
+    border-top:1px solid rgba(0,0,0,.15);
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:.8s;
+
+}
+
+.postdata.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/*==================================================
+            BOTÓN
+==================================================*/
+
+#continueFinal{
+
+    display:block;
+
+    margin:60px auto 0;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}

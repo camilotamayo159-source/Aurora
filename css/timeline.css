@@ -1,0 +1,756 @@
+/*========================================
+            CAPÍTULO 4
+========================================*/
+
+#chapter4{
+
+    position:relative;
+
+    display:block;
+
+    width:100%;
+
+    min-height:auto;
+
+    padding:0;
+
+    overflow:visible;
+
+}
+
+/*========================================
+            INTRO
+========================================*/
+
+.timeline-intro{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.timeline-intro h2{
+
+    max-width:850px;
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:3.8rem;
+
+    line-height:1.5;
+
+    color:white;
+
+}
+
+
+/*========================================
+        CONTENEDOR
+========================================*/
+
+#timelineContainer{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:120px 0 180px;
+
+}
+
+
+/*========================================
+            TIMELINE
+========================================*/
+
+.timeline{
+
+    position:relative;
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+}
+
+
+/*========================================
+        LÍNEA CENTRAL
+========================================*/
+
+.timeline-line{
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    bottom:0;
+
+    width:4px;
+
+    transform:translateX(-50%);
+
+    background:linear-gradient(
+
+        to bottom,
+
+        #ffffff,
+
+        #ffd4ea,
+
+        #ffffff
+
+    );
+
+    border-radius:999px;
+
+    box-shadow:
+
+        0 0 25px rgba(255,255,255,.25);
+
+}
+
+
+/*========================================
+            ITEMS
+========================================*/
+
+.timeline-item{
+
+    opacity:1;
+
+    transform:none;
+
+    transition:
+
+        opacity .8s,
+
+        transform .8s;
+
+}
+
+.timeline-item.left{
+
+    
+    display:flex;
+
+    justify-content:flex-start;
+
+}
+
+.timeline-item.right{
+
+    
+    display:flex;
+
+    justify-content:flex-end;
+
+
+}
+
+
+/*========================================
+            TARJETAS
+========================================*/
+
+.timeline-card{
+
+    width:min(420px,90vw);
+
+    max-width:420px;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+        0 25px 50px rgba(0,0,0,.35);
+
+    transition:.4s;
+
+    position:relative;
+
+    z-index:5;
+    overflow:hidden;
+
+}
+
+.timeline-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.timeline-card h3{
+
+    color:#ffd2e8;
+
+    font-size:.9rem;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:10px;
+
+}
+
+.timeline-card h2{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:2.3rem;
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+.timeline-card p{
+
+    color:#ececec;
+
+    line-height:1.8;
+
+}
+
+
+/*========================================
+        SEPARACIÓN
+========================================*/
+
+.timeline-item.left .timeline-card{
+
+    margin-right:100px;
+
+}
+
+.timeline-item.right .timeline-card{
+
+    margin-left:100px;
+
+}
+
+
+/*========================================
+            PUNTO
+========================================*/
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:2rem;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+
+        0 12px 30px rgba(0,0,0,.35),
+
+        0 0 25px rgba(255,210,230,.15);
+
+    z-index:10;
+
+}
+
+
+/*========================================
+            APARICIÓN
+========================================*/
+
+.timeline-item{
+
+    opacity:0;
+
+    transform:
+        translateY(80px)
+        scale(.92);
+
+    filter:blur(8px);
+
+    transition:
+
+        opacity 1s ease,
+
+        transform 1s cubic-bezier(.22,.61,.36,1),
+
+        filter 1s ease;
+
+}
+
+.timeline-item.show{
+
+    opacity:1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    filter:blur(0);
+
+}
+
+
+/*========================================
+            RESPONSIVE
+========================================*/
+
+@media(max-width:900px){
+
+.timeline-line{
+
+    left:35px;
+
+}
+
+.timeline-dot{
+
+    left:35px;
+
+}
+
+.timeline-item{
+
+    justify-content:flex-end !important;
+
+    padding-left:90px;
+
+}
+
+.timeline-card{
+
+    width:100%;
+
+    margin:0 !important;
+
+}
+
+.timeline-intro h2{
+
+    font-size:2.7rem;
+
+}
+
+}
+
+/*========================================
+        FOTOS DEL TIMELINE
+========================================*/
+
+.timeline-image{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    margin-bottom:22px;
+
+    transition:.45s;
+
+}
+
+.timeline-image:hover{
+
+    transform:scale(1.03);
+
+}
+
+.timeline-content{
+
+    text-align:center;
+
+}
+
+.timeline-content h3{
+
+    color:#ffd9ea;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+
+}
+
+.timeline-content h2{
+
+    font-family:"Dancing Script",cursive;
+
+    color:white;
+
+    font-size:2.2rem;
+
+    margin-bottom:15px;
+
+}
+
+.timeline-content p{
+
+    color:#ececec;
+
+    line-height:1.9;
+
+}
+
+.play-memory{
+
+    margin-top:25px;
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    backdrop-filter:blur(12px);
+
+}
+
+.play-memory:hover{
+
+    transform:scale(1.05);
+
+    background:rgba(255,255,255,.18);
+
+}
+
+/*========================================
+            IMÁGENES
+========================================*/
+
+.timeline-image{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    margin-bottom:20px;
+
+    display:block;
+
+    transition:
+
+        transform 1.3s ease,
+
+        filter .8s ease;
+
+}
+
+.timeline-card:hover .timeline-image{
+
+    transform:scale(1.05);
+
+}
+
+/*========================================
+            CORAZÓN
+========================================*/
+
+.timeline-heart{
+
+    font-size:4rem;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+
+/*========================================
+            VIDEO
+========================================*/
+
+.play-memory{
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#ff7cab;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.play-memory:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/*========================================
+        EFECTO CRISTAL
+========================================*/
+
+.timeline-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            120deg,
+
+            transparent,
+
+            rgba(255,255,255,.05),
+
+            transparent
+
+        );
+
+    transform:translateX(-150%);
+
+    transition:1.2s;
+
+}
+
+.timeline-card:hover::before{
+
+    transform:translateX(150%);
+
+}
+
+/*========================================
+            GALERÍA
+========================================*/
+
+.gallery-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.92);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.35s;
+
+    z-index:999999;
+
+}
+
+.gallery-modal.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+#galleryImage,
+#galleryVideo{
+
+    max-width:90vw;
+
+    max-height:85vh;
+
+    border-radius:20px;
+
+    object-fit:contain;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+}
+
+#closeGallery{
+
+    position:absolute;
+
+    top:30px;
+
+    right:40px;
+
+    font-size:2rem;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+.timeline-image{
+
+    cursor:pointer;
+
+}
+
+/*========================================
+        FINAL DEL TIMELINE
+========================================*/
+
+.timeline-ending{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:120px 0 80px;
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1.2s;
+
+}
+
+.timeline-ending.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.timeline-ending h2{
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:2.6rem;
+
+    color:#fff;
+
+    margin-bottom:15px;
+
+    text-align:center;
+
+}
+
+.timeline-ending p{
+
+    color:#ddd;
+
+    font-size:1.2rem;
+
+    margin-bottom:35px;
+
+    text-align:center;
+
+    line-height:1.8;
+
+}
+
+.timeline-ending button{
+
+    padding:16px 34px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ff4f87;
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.timeline-ending button:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 25px rgba(255,79,135,.45);
+
+}

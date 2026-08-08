@@ -1,0 +1,114 @@
+/*=========================================
+            CAPÍTULO 7
+=========================================*/
+
+#chapter7{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:60px;
+
+}
+
+.countdown-container{
+
+    max-width:700px;
+
+}
+
+
+.count-number{
+
+    font-size:7rem;
+
+    font-weight:700;
+
+    color:#fff;
+
+    margin:20px 0 0;
+
+}
+
+
+.count-label{
+
+    display:block;
+
+    font-size:1.3rem;
+
+    opacity:.7;
+
+    margin-bottom:35px;
+
+}
+
+
+.time-row{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:45px;
+
+    margin:30px 0;
+
+}
+
+
+.time-row div{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+.time-row span{
+
+    font-size:2rem;
+
+    font-weight:600;
+
+}
+
+
+.countdown-text{
+
+    margin:45px auto;
+
+    max-width:500px;
+
+    line-height:1.8;
+
+    opacity:.85;
+
+}
+
+
+#continueMusic{
+
+    margin-top:20px;
+
+}
+
+#countdownTitle,
+#countdownDate,
+#countdownBox,
+#countdownText,
+#continueMusic{
+
+    opacity:0;
+
+    transition:.8s;
+
+}

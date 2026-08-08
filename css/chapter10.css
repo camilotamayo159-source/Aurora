@@ -1,0 +1,417 @@
+/*==================================================
+                    CAPÍTULO 10
+==================================================*/
+
+#chapter10{
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+}
+
+/*==================================*/
+
+.final-scene{
+
+    text-align:center;
+
+    max-width:900px;
+
+    padding:40px;
+
+    z-index:5;
+
+}
+
+/*==================================*/
+
+#finalTitle,
+#finalText1,
+#finalText2,
+#auroraLogo,
+#auroraSubtitle,
+#finalWord,
+#restartAurora{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:1.5s ease;
+
+}
+
+/*==================================*/
+
+.showFinal{
+
+    opacity:1 !important;
+
+    transform:translateY(0) !important;
+
+}
+
+/*==================================*/
+
+#finalTitle{
+
+    font-size:3.5rem;
+
+    margin-bottom:35px;
+
+    font-family:"Dancing Script",cursive;
+
+}
+
+/*==================================*/
+
+#finalText1,
+#finalText2{
+
+    font-size:1.35rem;
+
+    line-height:2;
+
+    margin:25px 0;
+
+}
+
+/*==================================*/
+
+#finalHeart{
+
+    font-size:5rem;
+
+    margin:60px 0;
+
+    opacity:0;
+
+    animation:none;
+
+}
+
+/*==================================*/
+
+#finalHeart.show{
+
+    opacity:1;
+
+}
+
+/*==================================*/
+
+@keyframes heartbeat{
+
+    0%{
+
+        transform:scale(1);
+
+        filter:drop-shadow(0 0 0 rgba(255,90,120,0));
+
+    }
+
+    25%{
+
+        transform:scale(1.08);
+
+        filter:drop-shadow(0 0 18px rgba(255,90,120,.7));
+
+    }
+
+    50%{
+
+        transform:scale(1);
+
+        filter:drop-shadow(0 0 8px rgba(255,90,120,.3));
+
+    }
+
+    75%{
+
+        transform:scale(1.08);
+
+        filter:drop-shadow(0 0 18px rgba(255,90,120,.7));
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        filter:drop-shadow(0 0 0 rgba(255,90,120,0));
+
+    }
+
+}
+
+/*==================================*/
+
+#auroraLogo{
+
+    font-size:4rem;
+
+    font-family:"Dancing Script",cursive;
+
+    margin-top:10px;
+
+}
+
+/*==================================*/
+
+#auroraSubtitle{
+
+    margin-top:15px;
+
+    opacity:.8;
+
+    font-size:1.15rem;
+
+}
+
+/*==================================*/
+
+#finalWord{
+
+    margin-top:80px;
+
+    font-size:3rem;
+
+    font-family:"Dancing Script",cursive;
+
+}
+
+/*==================================*/
+
+#restartAurora{
+
+    margin-top:70px;
+}
+
+/*==================================
+            ESTRELLAS
+==================================*/
+
+#starsFinal{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+/*==================================*/
+
+.starFinal{
+
+    position:absolute;
+
+    width:2px;
+
+    height:2px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.7;
+
+    animation:twinkle 4s infinite alternate;
+
+}
+
+/*==================================*/
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.2;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.6);
+
+    }
+
+}
+
+/*==================================
+            PARTÍCULAS
+==================================*/
+
+#particlesFinal{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:1;
+
+    pointer-events:none;
+
+}
+
+/*==================================*/
+
+.particle{
+
+    position:absolute;
+
+    bottom:-30px;
+
+    width:5px;
+
+    height:5px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.8);
+
+    animation:rise linear forwards;
+
+}
+
+/*==================================*/
+
+@keyframes rise{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:.8;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh);
+
+        opacity:0;
+
+    }
+
+}
+
+/*==================================
+            FADE FINAL
+==================================*/
+
+#fadeToBlack{
+
+    position:fixed;
+
+    inset:0;
+
+    background:black;
+
+    opacity:0;
+
+    transition:4s;
+
+    pointer-events:none;
+
+    z-index:8;
+
+}
+
+#fadeToBlack.show{
+
+    opacity:1;
+
+}
+
+#restartAurora{
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+/*==================================
+            FECHA FINAL
+==================================*/
+
+#finalDate{
+
+    margin-top:35px;
+
+    font-size:.95rem;
+
+    letter-spacing:5px;
+
+    color:rgba(255,255,255,.55);
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:1.5s;
+
+}
+
+#finalDate.showFinal{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+#finalWord{
+
+    animation:glow 3s ease-in-out infinite;
+
+}
+
+@keyframes glow{
+
+    0%{
+
+        text-shadow:0 0 0 rgba(255,255,255,0);
+
+    }
+
+    50%{
+
+        text-shadow:
+            0 0 15px rgba(255,255,255,.4),
+            0 0 35px rgba(255,255,255,.2);
+
+    }
+
+    100%{
+
+        text-shadow:0 0 0 rgba(255,255,255,0);
+
+    }
+
+}

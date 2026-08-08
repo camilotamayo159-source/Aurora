@@ -1,0 +1,625 @@
+/*=========================================
+            CAPÍTULO 8
+=========================================*/
+
+#chapter8{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px;
+
+}
+
+.music-container{
+
+    text-align:center;
+
+    max-width:800px;
+
+}
+
+/*=========================================
+            TOCADISCOS
+=========================================*/
+
+.turntable{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:60px auto;
+
+    perspective:1200px;
+
+}
+
+.wood-base{
+
+    border:4px solid #2f1b10;
+
+    position:relative;
+
+    width:520px;
+
+    height:330px;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    transform:rotateX(8deg);
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #3b2415 0%,
+        #5a3922 18%,
+        #6b4528 35%,
+        #4e311e 55%,
+        #6d4729 75%,
+        #3c2416 100%
+    );
+
+   box-shadow:
+
+0 35px 70px rgba(0,0,0,.55),
+
+0 8px 20px rgba(0,0,0,.35),
+
+inset 0 2px 3px rgba(255,255,255,.08),
+
+inset 0 -8px 10px rgba(0,0,0,.35);
+
+}
+
+.wood-base::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    repeating-linear-gradient(
+
+        90deg,
+
+        transparent 0px,
+
+        rgba(255,255,255,.025) 3px,
+
+        transparent 7px,
+
+        rgba(0,0,0,.04) 11px
+
+    );
+
+    opacity:.7;
+
+}
+
+.light-reflection{
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:40%;
+
+    background:
+
+    linear-gradient(
+
+        rgba(255,255,255,.08),
+
+        transparent
+
+    );
+
+    pointer-events:none;
+
+}
+
+.wood-base::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-12px;
+
+    left:40px;
+
+    width:440px;
+
+    height:14px;
+
+    border-radius:20px;
+
+    background:#23150d;
+
+}
+
+.vinyl{
+
+    width:205px;
+    height:205px;
+
+    border-radius:50%;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+        radial-gradient(circle at 35% 25%,
+
+        rgba(255,255,255,.10),
+
+        transparent 28%),
+
+        radial-gradient(circle,
+
+        #232323,
+
+        #111 58%,
+
+        #050505 100%);
+
+    box-shadow:
+
+        inset 0 0 12px rgba(255,255,255,.08),
+
+        inset 0 -8px 18px rgba(0,0,0,.45),
+
+        0 8px 18px rgba(0,0,0,.5);
+
+}
+
+.vinyl::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+
+    height:28px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    transform:rotate(-30deg);
+
+    top:30px;
+
+    left:18px;
+
+    filter:blur(6px);
+
+}
+
+.vinyl-rings{
+
+    position:absolute;
+
+    width:185px;
+
+    height:185px;
+
+    border-radius:50%;
+
+    background:
+
+    repeating-radial-gradient(
+
+        circle,
+
+        transparent 0px,
+
+        transparent 3px,
+
+        rgba(255,255,255,.05) 4px,
+
+        transparent 5px
+
+    );
+
+}
+
+.vinyl-label{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,#f5d46f,#d6a636);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:2;
+
+    text-align:center;
+
+    font-size:.6rem;
+
+    font-weight:bold;
+
+    color:#333;
+
+}
+
+
+.vinyl::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:190px;
+
+    height:190px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+    0 0 0 12px rgba(255,255,255,.04),
+
+    0 0 0 24px rgba(255,255,255,.03),
+
+    0 0 0 36px rgba(255,255,255,.025);
+
+}
+
+.vinyl-center{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:#d8b24d;
+
+    box-shadow:0 0 15px rgba(255,215,0,.4);
+
+}
+
+
+
+#musicButton{
+
+    margin-top:25px;
+
+}
+
+.music-text{
+
+    margin:40px auto;
+
+    max-width:520px;
+
+    line-height:1.8;
+
+    opacity:.85;
+
+}
+
+.tonearm{
+
+    position:absolute;
+
+    top:40px;
+
+    right:35px;
+
+    width:190px;
+
+    height:190px;
+
+    transform-origin:24px 24px;
+
+    transform:rotate(-25deg);
+
+    transition:transform .8s ease;
+
+}
+
+.tonearm.playing{
+
+    transform:rotate(170deg);
+
+}
+
+.tonearm-base{
+
+    position:absolute;
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle at 35% 30%,
+
+    #ffffff,
+
+    #cfcfcf 40%,
+
+    #8d8d8d 70%,
+
+    #444);
+
+    box-shadow:
+
+    inset 0 2px 5px rgba(255,255,255,.6),
+
+    0 0 12px rgba(0,0,0,.5);
+
+}
+
+.pivot-center{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#444;
+
+    transform:translate(-50%,-50%);
+
+}
+
+.tonearm-bar{
+
+    position:absolute;
+
+    left:35px;
+
+    top:20px;
+
+    width:115px;
+
+    height:8px;
+
+    border-radius:20px;
+
+    background:
+
+    linear-gradient(
+
+    to bottom,
+
+    #efefef,
+
+    #b8b8b8,
+
+    #7b7b7b
+
+    );
+
+    box-shadow:
+
+    inset 0 1px 2px rgba(255,255,255,.6);
+
+}
+
+.counterweight{
+
+    position:absolute;
+
+    left:4px;
+
+    top:15px;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+
+    #dcdcdc,
+
+    #777);
+
+}
+
+.headshell{
+
+    position:absolute;
+
+    left:145px;
+
+    top:12px;
+
+    width:30px;
+
+    height:18px;
+
+    border-radius:4px;
+
+    background:#1c1c1c;
+
+    box-shadow:
+
+    0 4px 8px rgba(0,0,0,.4);
+
+}
+
+.stylus{
+
+    position:absolute;
+
+    left:13px;
+
+    top:15px;
+
+    width:2px;
+
+    height:12px;
+
+    background:#e8e8e8;
+
+}
+
+
+
+.power-led{
+
+    position:absolute;
+
+    right:35px;
+
+    bottom:32px;
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#444;
+
+    box-shadow:0 0 4px rgba(0,0,0,.5);
+
+    transition:.4s;
+
+}
+
+.power-led.on{
+
+    background:#4cff65;
+
+    box-shadow:
+
+    0 0 15px #4cff65,
+
+    0 0 30px #4cff65;
+
+}
+
+.volume-knob{
+
+    position:absolute;
+
+    right:70px;
+
+    bottom:25px;
+
+    width:28px;
+
+    height:28px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+
+    #efefef,
+
+    #888);
+
+    box-shadow:
+
+    inset 0 2px 3px rgba(255,255,255,.5),
+
+    0 2px 5px rgba(0,0,0,.5);
+
+}
+
+
+.start-button-decoration{
+
+    position:absolute;
+
+    right:110px;
+
+    bottom:28px;
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:#222;
+
+    border:2px solid #666;
+
+}
+
+
+/*=========================================
+            ANIMACIONES
+=========================================*/
+
+@keyframes girarVinilo{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+.vinyl.playing{
+
+    animation:girarVinilo 2.8s linear infinite;
+
+}

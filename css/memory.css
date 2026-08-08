@@ -1,0 +1,129 @@
+/*========================================
+        CAPÍTULO 3
+========================================*/
+
+#chapter3{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/*========================================
+        FONDO
+========================================*/
+
+.memory-background{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("../assets/img/primera-foto.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    filter:blur(22px);
+
+    transform:scale(1.15);
+
+    opacity:.22;
+
+    z-index:0;
+
+}
+
+.memory-background::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        rgba(5,5,12,.72),
+
+        rgba(5,5,12,.80)
+
+    );
+
+}
+
+
+/*========================================
+        CONTENIDO
+========================================*/
+
+.memory-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:40px;
+
+}
+
+
+/*========================================
+        TARJETA
+========================================*/
+
+.memory-card{
+
+    width:min(720px,90%);
+
+    padding:32px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+        0 20px 50px rgba(0,0,0,.35);
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+}
+
+
+/*========================================
+        TARJETA ACTIVA
+========================================*/
+
+.memory-card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease;
+
+}

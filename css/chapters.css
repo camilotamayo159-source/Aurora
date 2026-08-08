@@ -1,0 +1,69 @@
+/*========================================
+            CAPÍTULOS
+========================================*/
+
+.chapter{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    padding:60px;
+    box-sizing:border-box;
+
+}
+
+/*========================================
+            OCULTO
+========================================*/
+
+.hidden{
+
+    display:none !important;
+
+}
+
+/*========================================
+        CONTENIDO BIENVENIDA
+========================================*/
+
+.welcome-box{
+
+    max-width:800px;
+
+    text-align:center;
+
+    animation:fadeIn 1s ease;
+
+}
+
+.welcome-box h1{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:4rem;
+
+    margin-bottom:30px;
+
+}
+
+.welcome-box p{
+
+    font-size:1.25rem;
+
+    line-height:1.8;
+
+    margin:20px 0;
+
+}
+
+.welcome-box button{
+
+    margin-top:50px;
+
+}

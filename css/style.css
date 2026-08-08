@@ -1,0 +1,251 @@
+/*========================================
+            CONFIGURACIÓN GENERAL
+========================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    background:#050816;
+
+    color:white;
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+    min-height:100vh;
+
+}
+
+/*========================================
+            TÍTULOS
+========================================*/
+
+h1{
+
+    font-family:"Dancing Script",cursive;
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+
+}
+
+h2{
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+}
+
+h3{
+
+    font-size:1.2rem;
+
+    margin:25px 0;
+
+    font-weight:500;
+
+}
+
+/*========================================
+            PÁRRAFOS
+========================================*/
+
+p{
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    color:#e9e9e9;
+
+}
+
+/*========================================
+            BOTONES
+========================================*/
+
+button{
+
+    margin-top:35px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    background:linear-gradient(135deg,#ff5d8f,#ff87b1);
+
+    color:white;
+
+    transition:.35s;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(255,120,170,.35);
+
+}
+
+/*========================================
+            BOTÓN OCULTO
+========================================*/
+
+.hiddenButton{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    pointer-events:none;
+
+}
+
+.showButton{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    pointer-events:auto;
+
+    transition:.8s ease;
+
+}
+
+/*========================================
+            INPUTS
+========================================*/
+
+input{
+
+    font-size:1.1rem;
+
+}
+
+/*========================================
+            MENSAJES
+========================================*/
+
+#message{
+
+    margin-top:20px;
+
+    min-height:28px;
+
+    font-weight:600;
+
+}
+
+/*========================================
+            CRÉDITOS
+========================================*/
+
+.made{
+
+    margin-top:35px;
+
+    opacity:.7;
+
+    font-size:.9rem;
+
+}
+
+
+
+/* =========================
+   REFUGIO v17 — RECUERDOS + VIDEO
+   ========================= */
+.refuge-personal-gallery,
+.refuge-video-block {
+    width: min(720px, 100%);
+    margin: 26px auto;
+}
+
+.refuge-gallery-open {
+    margin-top: 8px;
+}
+
+.refuge-personal-gallery .refuge-memory-viewer {
+    margin: 18px auto 0;
+}
+
+.refuge-video-block {
+    text-align: center;
+}
+
+.refuge-video {
+    display: block;
+    width: 100%;
+    max-height: 62vh;
+    margin: 14px auto 0;
+    border-radius: 20px;
+    background: rgba(0,0,0,.28);
+    border: 1px solid rgba(255,255,255,.10);
+}
+
+@media (max-width: 600px) {
+    .refuge-video {
+        max-height: 55vh;
+        border-radius: 16px;
+    }
+}
+
+
+/* Galería personal del Refugio */
+.refuge-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 1.25rem 0;
+}
+.refuge-gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+@media (min-width: 700px) {
+  .refuge-gallery-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+
+.refuge-video-card {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(255,255,255,.05);
+}
+.refuge-video-card video {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  margin-top: .75rem;
+  max-height: 520px;
+}

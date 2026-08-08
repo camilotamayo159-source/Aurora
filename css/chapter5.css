@@ -1,0 +1,469 @@
+.chapter5-intro{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.chapter5-intro h1{
+
+    font-size:4rem;
+
+    margin-bottom:15px;
+
+}
+
+.chapter5-intro h2{
+
+    color:white;
+
+    margin-bottom:30px;
+
+}
+
+.chapter5-intro p{
+
+    color:#ddd;
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+    max-width:700px;
+
+    white-space:pre-line;
+
+}
+
+#startReasons{
+
+    margin-top:40px;
+
+}
+
+/*=========================================
+            TARJETA
+=========================================*/
+
+.reason-card{
+
+    width:700px;
+
+    max-width:90%;
+
+    min-height:430px;
+
+    margin:auto;
+
+    margin-top:80px;
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px;
+
+    overflow:hidden;
+
+}
+
+.reason-number{
+
+    color:#ff8fb1;
+
+    font-size:2rem;
+
+    margin-bottom:35px;
+
+}
+
+.reason-text{
+
+    color:white;
+
+    font-size:2.2rem;
+
+    text-align:center;
+
+    line-height:1.6;
+
+    min-height:120px;
+
+    font-weight:300;
+
+}
+
+#nextReason{
+
+    margin-top:55px;
+
+    background:none;
+
+    border:none;
+
+    color:#ffffff;
+
+    font-size:1.05rem;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+#nextReason:hover{
+
+    transform:translateX(10px);
+
+    color:#ffd4e2;
+
+}
+
+/*=========================================
+        ANIMACIÓN TARJETA
+=========================================*/
+
+.card-in{
+
+    animation:cardIn .45s ease forwards;
+
+}
+
+.card-out{
+
+    animation:cardOut .35s ease forwards;
+
+}
+
+@keyframes cardOut{
+
+    from{
+
+        opacity:1;
+        transform:translateX(0) scale(1);
+
+    }
+
+    to{
+
+        opacity:0;
+        transform:translateX(-80px) scale(.95);
+
+    }
+
+}
+
+@keyframes cardIn{
+
+    from{
+
+        opacity:0;
+        transform:translateX(80px) scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateX(0) scale(1);
+
+    }
+
+}
+
+/*=========================================
+            CABECERA
+=========================================*/
+
+.reason-header{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin-bottom:45px;
+
+}
+
+.reason-heart{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:90px;
+
+    height:90px;
+
+    font-size:3rem;
+
+}
+
+
+.reason-counter{
+
+    color:#ffd5e5;
+
+    font-size:1rem;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
+
+/*=========================================
+        BOTÓN CLICK
+=========================================*/
+
+.button-click{
+
+    transform:scale(.93);
+
+    opacity:.75;
+
+}
+
+/*=========================================
+        LATIDO
+=========================================*/
+
+.reason-heart.heartbeat{
+
+    animation:heartbeat .8s;
+
+}
+
+@keyframes heartbeat{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    20%{
+
+        transform:scale(1.35);
+
+    }
+
+    40%{
+
+        transform:scale(.95);
+
+    }
+
+    60%{
+
+        transform:scale(1.28);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*=========================================
+            ESTRELLAS
+=========================================*/
+
+.star{
+
+    position:fixed;
+
+    font-size:18px;
+
+    pointer-events:none;
+
+    z-index:999999;
+
+    animation:starFloat 2.8s linear forwards;
+
+}
+
+@keyframes starFloat{
+
+    from{
+
+        opacity:1;
+
+        transform:translateY(0) scale(.7);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:translateY(-180px) scale(1.4);
+
+    }
+
+}
+
+/*=========================================
+        ESTRELLAS DEL CORAZÓN
+=========================================*/
+
+.heart-star{
+
+    position:absolute;
+
+    font-size:18px;
+
+    pointer-events:none;
+
+    animation:heartStar 1.8s ease forwards;
+
+}
+
+@keyframes heartStar{
+
+    0%{
+
+        opacity:0;
+
+        transform:translate(0,0) scale(.3);
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translate(
+            var(--x),
+            var(--y)
+        )
+        scale(1.3);
+
+    }
+
+}
+
+.moon-glow{
+
+    animation:moonGlow 2s;
+
+}
+
+@keyframes moonGlow{
+
+    0%{
+
+        box-shadow:0 0 0 rgba(255,255,255,0);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 30px rgba(255,255,255,.35),
+        0 0 70px rgba(255,255,255,.15);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 rgba(255,255,255,0);
+
+    }
+
+}
+
+.final-love{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    animation:finalFade 1.5s ease;
+
+}
+
+.final-love h1{
+
+    font-size:3rem;
+
+    margin-top:25px;
+
+    color:white;
+
+    font-weight:300;
+
+}
+
+.final-love{
+
+    font-size:5rem;
+
+}
+
+@keyframes finalFade{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.85);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}

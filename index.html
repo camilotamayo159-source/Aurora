@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuestra Historia ❤️</title>
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/chapters.css">
+    <link rel="stylesheet" href="css/polaroid.css">
+    <link rel="stylesheet" href="css/memory.css">
+    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/timelineEffects.css">
+    <link rel="stylesheet" href="css/chapter5.css">
+    <link rel="stylesheet" href="css/chapter6.css">
+    <link rel="stylesheet" href="css/chapter7.css">
+    <link rel="stylesheet" href="css/chapter8.css">
+    <link rel="stylesheet" href="css/chapter9.css">
+    <link rel="stylesheet" href="css/chapter10.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/eastereggs.css">
+    
+
+</head>
+
+<body>
+
+    <!-- ==========================
+            FONDO
+    =========================== -->
+
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="moon"></div>
+
+    <!-- ==========================
+            CAPÍTULO 1
+            LOGIN
+    =========================== -->
+
+    <section id="chapter1" class="chapter">
+
+        <div class="login">
+
+            <div class="login-box">
+
+                <h1>❤️</h1>
+
+                <h2>Nuestra Historia</h2>
+
+                <p>Antes de entrar...</p>
+
+                <p>
+                    Solo hay una persona que puede abrir este regalo.
+                </p>
+
+                <h3>¿Qué día nos conocimos?</h3>
+
+                <input
+                    id="password"
+                    type="text"
+                    placeholder="DD/MM/AAAA"
+                    maxlength="10">
+
+                <button id="loginButton">
+
+                    Entrar →
+
+                </button>
+
+                <p id="message"></p>
+
+                <p class="made">
+
+                    Hecho con mucho amor por Gian
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+            CAPÍTULO 2
+    =========================== -->
+
+    <section id="chapter2" class="chapter hidden">
+
+        <div class="welcome-box">
+
+            <h1 id="welcomeTitle"></h1>
+
+            <p id="line1"></p>
+
+            <p id="line2"></p>
+
+            <button
+                id="startJourney"
+                class="hiddenButton">
+
+                Comenzar nuestro viaje →
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+            CAPÍTULOS FUTUROS
+    =========================== -->
+
+<!-- ==========================
+        CAPÍTULO 3
+========================== -->
+
+<section id="chapter3" class="chapter hidden">
+
+    <!-- Fondo desenfocado -->
+    <div class="memory-background"></div>
+
+    <!-- Contenido -->
+    <div class="memory-content">
+
+        <!-- Polaroid -->
+        <div id="firstPolaroid" class="polaroid">
+
+            <img
+                src="assets/img/primera-foto.jpg"
+                alt="Nuestro primer recuerdo">
+
+            <div class="polaroid-caption">
+
+                El comienzo de algo muy bonito.
+
+            </div>
+
+            <p class="memory-date">
+
+                🎂 06 de mayo de 2025
+
+            </p>
+
+            <p class="memory-subtitle">
+
+                Tu cumpleaños
+
+            </p>
+
+        </div>
+
+        <!-- Tarjeta -->
+        <div id="memoryCard" class="memory-card">
+
+            <p id="memoryText"></p>
+
+            <button
+                id="nextMemory"
+                class="hiddenButton">
+
+                Continuar nuestra historia →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+        CAPÍTULO 4
+========================== -->
+
+<section id="chapter4" class="chapter hidden">
+
+    <div class="timeline-intro">
+
+        <h2 id="timelinePhrase"></h2>
+
+    </div>
+
+    <div id="timelineContainer" class="hidden">
+
+        <div class="timeline">
+
+            <!-- Línea -->
+            <div class="timeline-line"></div>
+
+            <!-- Aquí JS agregará todos los recuerdos -->
+            <div id="timelineList"></div>
+
+        </div>
+        
+     <button
+        id="continueTimeline"
+        class="primary-button hidden">
+
+        Continuar →
+
+    </button>
+    </div>
+
+</section>
+
+<!-- ==========================
+        CAPÍTULO 5
+========================== -->
+
+   <section id="chapter5" class="chapter hidden">
+
+    <div id="chapter5Intro" class="chapter5-intro">
+
+        <h1>❤️</h1>
+
+        <h2>100 cosas que amo de ti</h2>
+
+        <p id="chapter5Text"></p>
+
+        <button
+            id="startReasons"
+            class="hiddenButton">
+
+            Comenzar ❤️
+
+        </button>
+
+    </div>
+
+    <div id="reasonContainer" class="hidden">
+
+    <div id="reasonCard" class="reason-card fade-card">
+
+       <div class="reason-header">
+
+    <div class="reason-heart">
+
+        ❤️
+
+    </div>
+
+    <div
+        id="reasonCounter"
+        class="reason-counter">
+
+        1 de 100
+
+    </div>
+
+</div>
+
+        <div id="reasonText" class="reason-text">
+
+            Tu sonrisa.
+
+        </div>
+
+        <button id="nextReason">
+
+            Siguiente →
+
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+    <!-- ==========================
+        CAPÍTULO 6
+========================== -->
+
+<section id="chapter6" class="chapter hidden">
+
+    <div class="gallery-header">
+
+        <h1>📸</h1>
+
+        <h2>
+
+            Nuestros recuerdos
+
+        </h2>
+
+        <p>
+
+            Hay momentos que una fotografía no puede explicar...
+            pero aun así logra hacerme sonreír.
+
+        </p>
+
+    </div>
+
+    <div
+        id="galleryGrid"
+        class="gallery-grid">
+
+    </div>
+
+    <button
+        id="nextGallerySection"
+        class="gallery-button">
+
+        Siguiente colección →
+
+    </button>
+
+</section>
+
+    <!-- ==========================
+        CAPÍTULO 7
+========================== -->
+
+<section id="chapter7" class="chapter hidden">
+
+    <div class="countdown-container">
+
+        <h1>❤️</h1>
+
+       <h2 id="countdownTitle"> </h2>
+
+        <p
+          id="countdownDate"
+          class="countdown-date">
+
+         Desde el 05 de Abril de 2025
+
+       </p>
+
+        <div
+           id="countdownBox"
+           class="countdown-box">
+
+            <div id="days" class="count-number">
+
+                0
+
+            </div>
+
+            <span class="count-label">
+
+                días
+
+            </span>
+
+            <div class="time-row">
+
+                <div>
+
+                    <span id="hours">00</span>
+
+                    <small>horas</small>
+
+                </div>
+
+                <div>
+
+                    <span id="minutes">00</span>
+
+                    <small>minutos</small>
+
+                </div>
+
+                <div>
+
+                    <span id="seconds">00</span>
+
+                    <small>segundos</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <p
+             id="countdownText"
+            class="countdown-text">
+
+          Siento que todavía nos queda una vida entera por compartir.
+
+         </p>
+ 
+        <button
+          id="continueMusic">
+
+         Continuar →
+
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- ==========================
+        CAPÍTULO 8
+========================== -->
+
+<section id="chapter8" class="chapter hidden">
+
+    <div class="music-container">
+
+        <h1>🎵</h1>
+
+        <h2>
+
+            Nuestra canción
+
+        </h2>
+
+        <h3>
+
+            Can't Help Falling in Love
+
+        </h3>
+
+        <p class="music-artist">
+
+            Elvis Presley • 1961
+
+        </p>
+
+        <div class="turntable">
+
+    <div class="wood-base">
+
+        <div class="light-reflection"></div>
+
+        <div class="platter">
+
+            <div id="vinyl" class="vinyl">
+
+                <div class="vinyl-rings"></div>
+
+                <div class="vinyl-label">
+
+                    <span>R y G</span>
+
+                    
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="pivot"></div>
+
+        <div id="tonearm" class="tonearm">
+
+    <div class="tonearm-base">
+
+        <div class="pivot-center"></div>
+
+    </div>
+
+    <div class="tonearm-bar"></div>
+
+    <div class="counterweight"></div>
+
+    <div class="headshell">
+
+        <div class="stylus"></div>
+
+    </div>
+
+</div>
+
+        <div id="powerLed" class="power-led"></div>
+
+        <div class="volume-knob"></div>
+
+        <div class="start-button-decoration"></div>
+
+    </div>
+
+</div>
+
+        <button id="musicButton">
+
+            ▶ Reproducir
+
+        </button>
+
+        <p class="music-text">
+
+            Hay canciones que simplemente se escuchan...
+
+            <br><br>
+
+            Y hay otras que, desde la primera nota,
+            me llevan directamente a ti.
+
+        </p>
+
+        <button id="continueLetter">
+
+            Continuar nuestra historia →
+
+        </button>
+
+        <audio id="loveSong">
+    <source src="assets/audio/cant-help-falling-in-love.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="dingSound" preload="auto">
+
+    <source
+        src="audio/ding.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+    </div>
+
+</section>
+
+<!-- ==================================================
+                    CAPÍTULO 9
+================================================== -->
+
+<section id="chapter9" class="chapter hidden">
+
+    <!-- INTRO -->
+
+    <div class="letter-intro">
+
+        <h2>Antes de terminar...</h2>
+
+        <p>
+            Quisiera que te tomaras un momento para leer esto.
+        </p>
+
+        <button id="openLetterButton" class="primary-button">
+
+            Abrir carta ✉️
+
+        </button>
+
+    </div>
+
+
+    <!-- SOBRE -->
+
+    <div id="letterScene" class="letter-scene hidden">
+
+        <div id="envelope" class="envelope">
+
+            <div class="paper"></div>
+
+            <div class="flap"></div>
+
+            <div class="front"></div>
+
+            <div class="seal">❤️</div>
+
+        </div>
+
+        <p class="envelope-tip">
+
+            Haz clic sobre el sobre
+
+        </p>
+
+    </div>
+
+
+    <!-- CARTA -->
+
+    <div id="letterViewer" class="letter-viewer hidden">
+
+        <article class="letter">
+
+            <div id="letterContent"></div>
+
+            <div id="signature" class="signature">
+
+                Con todo mi amor,<br>
+                Gian ❤️
+
+            </div>
+
+            <div id="postdata" class="postdata">
+
+    <strong>P. D.</strong>
+
+    <br><br>
+
+    Si algún día la vida se pone demasiado difícil y sientes que necesitas un lugar tranquilo, vuelve a abrir Aurora.
+
+    <br><br>
+
+    Quizá no pueda solucionar tus problemas, pero espero que siempre pueda recordarte lo inmensamente especial que eres para mí.
+
+</div>
+
+            <button id="continueFinal" class="primary-button">
+
+                Nuestro último capítulo →
+
+            </button>
+
+        </article>
+
+    </div>
+
+</section>
+
++<!-- ==================================================
+                    CAPÍTULO 10
+================================================== -->
+
+<section id="chapter10" class="chapter hidden">
+
+    <div class="final-scene">
+
+        <h1 id="finalTitle"></h1>
+
+        <p id="finalText1"></p>
+
+        <p id="finalText2"></p>
+
+        <div id="finalHeart">
+
+            ❤️
+
+        </div>
+
+        <h2 id="auroraLogo">
+
+            Aurora
+
+        </h2>
+
+        <p id="auroraSubtitle">
+
+            Una pequeña historia hecha con amor.
+
+        </p>
+
+        <h3 id="finalWord">
+
+            Siempre.
+
+        </h3>
+
+        <p id="finalDate">
+
+             05 • Abril • 2025 — ∞
+
+       </p>
+
+        <button id="restartAurora">
+
+            ✦ Volver a vivir Aurora ✦
+
+        </button>
+
+     <div id="starsFinal"></div>
+
+    <div id="particlesFinal"></div>
+
+     <div id="fadeToBlack"></div>
+
+ </div>
+
+</section>
+
+    <!-- ==========================
+            JAVASCRIPT
+    =========================== -->
+
+    <script src="js/app.js"></script>
+
+    <script src="js/login.js"></script>
+
+    <script src="js/welcome.js"></script>
+
+    <script src="js/memory.js"></script>
+
+    <script src="js/background.js"></script>
+
+    <script src="js/music.js"></script>
+
+    <script src="js/countdown.js"></script>
+
+    <script src="js/gallery.js"></script>
+
+    <script src="js/eastereggs.js"></script>
+
+    <script src="js/timelineData.js"></script>
+
+    <script src="js/timelineEffects.js"></script>
+
+    <script src="js/timeline.js"></script>
+
+    <script src="js/chapter5.js"></script>
+
+    <script src="js/chapter6.js"></script>
+
+    <script src="js/chapter7.js"></script>
+
+    <script src="js/chapter8.js"></script>
+
+    <script src="js/chapter9.js"></script>
+
+    <script src="js/chapter10.js"></script>
+
+    
+    
+   
+<!--========================================
+                GALERÍA
+    ========================================-->
+
+    <div id="galleryModal" class="gallery-modal hidden">
+
+        <span id="closeGallery">
+
+            ✕
+
+        </span>
+
+        <img id="galleryImage">
+
+    </div>
+
+   <div id="effectsContainer"></div>
+
+</body>
+
+</html>
+
+
+<!--
+
+Aurora
+Hecho con muchísimo amor.
+
+Para la persona más especial de mi vida.
+
+05 • Abril • 2025 — ∞
+
+--> Rossy y Gian, always.
